@@ -8,5 +8,6 @@ public interface ClienteRepository
 {
     List<Cliente> listar();
     Cliente getCliente(int id);
+    int eliminar(int id);
     int actualizar(Cliente cliente);
 }

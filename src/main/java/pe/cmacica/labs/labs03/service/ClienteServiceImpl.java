@@ -24,6 +24,11 @@ public class ClienteServiceImpl implements ClienteService
     }
 
     @Override
+    public int eliminar(int id) {
+        return clienteRepository.eliminar(id);
+    }
+
+    @Override
     public int actualizar(Cliente cliente) {
         return clienteRepository.actualizar(cliente);
     }

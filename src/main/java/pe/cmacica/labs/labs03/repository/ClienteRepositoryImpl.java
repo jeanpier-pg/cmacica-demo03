@@ -49,10 +49,22 @@ public class ClienteRepositoryImpl implements ClienteRepository
 
     @Override
     public Cliente getCliente(int id) {
-        Cliente c = new Cliente();
+
+        Cliente c = jdbcTemplate.queryForObject("select * from cliente where id=?",
+                new Object[]{id},
+                new ClienteMapper());
+        /*Cliente c = new Cliente();
         c.setId(id);
-        c.setNombres("Jean Pier PG :)");
+        c.setNombres("Cliente");
+        */
         return c;
+    }
+
+    @Override
+    public int eliminar(int id) {
+
+        return jdbcTemplate.update("delete from cliente where id=?",new Object[]{id});
+        //return 0;
     }
 
     @Override

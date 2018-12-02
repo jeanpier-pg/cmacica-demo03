@@ -102,7 +102,10 @@ public class ClienteController
         {
             return ResponseEntity.badRequest().build();
         }
-        LOGGER.debug("DELETE");
-        return ResponseEntity.accepted().build();
+
+        clienteservice.eliminar(id);
+        //LOGGER.debug("DELETE");
+        //return ResponseEntity.accepted().build();
+        return ResponseEntity.ok().build();
     }
 }

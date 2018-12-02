@@ -43,7 +43,7 @@ public class ClienteRepositoryImpl implements ClienteRepository
         //}
 
         //return list;
-
+        //return list;
         return jdbcTemplate.query("Select * from cliente",new ClienteMapper());
     }
 
